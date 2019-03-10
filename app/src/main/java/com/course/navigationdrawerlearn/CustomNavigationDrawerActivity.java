@@ -50,36 +50,35 @@ public class CustomNavigationDrawerActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void addFragment(Fragment fragment){
+    private void addFragment(Fragment fragment) {
         FragmentManager manager = getSupportFragmentManager();
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.replace(R.id.container,fragment);
+        transaction.replace(R.id.container, fragment);
         transaction.addToBackStack("Add Trip Fragment Transaction");
-        transaction.commit();transaction.setCustomAnimations(android.R.animator.fade_in,android.R.animator.fade_out);
+        transaction.commit();
+        transaction.setCustomAnimations(android.R.animator.fade_in, android.R.animator.fade_out);
 
 
     }
-    private void setHandlers(){
+
+    private void setHandlers() {
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-               int id =menuItem.getItemId();
-               if(id == R.id.item_view_trips)
-               {
-                   addFragment(new AddTripFragment());
-                   Toast.makeText(CustomNavigationDrawerActivity.this,"View Trips",Toast.LENGTH_SHORT).show();
-               }
-               if(id ==R.id.item_view_favorites)
-               {
-                   getSupportFragmentManager().popBackStack();
-                   Toast.makeText(CustomNavigationDrawerActivity.this,"View Favorites",Toast.LENGTH_SHORT);
+                int id = menuItem.getItemId();
+                if (id == R.id.item_view_trips) {
+                    addFragment(new AddTripFragment());
+                    Toast.makeText(CustomNavigationDrawerActivity.this, "View Trips", Toast.LENGTH_SHORT).show();
+                }
+                if (id == R.id.item_view_favorites) {
+                    getSupportFragmentManager().popBackStack();
+                    Toast.makeText(CustomNavigationDrawerActivity.this, "View Favorites", Toast.LENGTH_SHORT);
 
-               }
+                }
 
 
-
-               mNavigationView.setCheckedItem(id);
-               mDrawerLayout.closeDrawer(Gravity.START);
+                mNavigationView.setCheckedItem(id);
+                mDrawerLayout.closeDrawer(Gravity.START);
 
                 //TODO replace fragments here
 
@@ -91,7 +90,7 @@ public class CustomNavigationDrawerActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        if(mDrawerLayout.isDrawerOpen(Gravity.START))
+        if (mDrawerLayout.isDrawerOpen(Gravity.START))
             mDrawerLayout.closeDrawer(Gravity.START);
         super.onBackPressed();
     }
