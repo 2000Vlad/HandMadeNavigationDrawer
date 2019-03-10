@@ -11,17 +11,17 @@
         android:layout_width="wrap_content"
         android:text="Trip Application"
         android:layout_marginStart="32dp"
-        android:textSize="26sp"
+        android:textSize="@dimen/sp26"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:layout_height="match_parent" />
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/dp8"
+        android:layout_marginStart="@dimen/dp16"
         android:src="@drawable/ic_plane_navdrawer"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="@dimen/dp8"
         />
 
 </LinearLayout>
