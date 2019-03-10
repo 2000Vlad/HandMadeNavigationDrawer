@@ -10,7 +10,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:text="Trip Application"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="@dimen/dp32"
         android:textSize="@dimen/sp26"
         android:textColor="@android:color/white"
         android:textStyle="bold"
